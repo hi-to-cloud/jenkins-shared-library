@@ -19,7 +19,7 @@ def call(){
             stage("ENV"){
                 steps {
                     script{
-                        env
+                        sh 'env'
                     }
                 }
             }
