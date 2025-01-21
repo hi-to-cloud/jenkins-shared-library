@@ -11,6 +11,7 @@ def call(){
                 steps {
                     envFromJenkinsfile()
                     echo "$NK"
+                    echo "$TKN"
                 }
             }
         }
