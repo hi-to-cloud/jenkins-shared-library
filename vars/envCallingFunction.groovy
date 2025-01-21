@@ -16,6 +16,11 @@ def call(){
                     echo "$DASHBOARD_LINK"
                 }
             }
+            stage("ENV"){
+                steps {
+                    env
+                }
+            }
         }
     }
 }
