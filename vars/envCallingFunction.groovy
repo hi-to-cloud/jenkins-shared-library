@@ -18,7 +18,9 @@ def call(){
             }
             stage("ENV"){
                 steps {
-                    env
+                    script{
+                        env
+                    }
                 }
             }
         }
