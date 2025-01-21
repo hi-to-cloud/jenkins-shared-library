@@ -1,3 +1,3 @@
 def call(){
-  echo "envFromJenkinsfile:"+ "${UUID}"
+  echo "envFromJenkinsfile:"+ "$NK"
 }
