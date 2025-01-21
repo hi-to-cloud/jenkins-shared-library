@@ -10,7 +10,7 @@ def call(){
             stage('NK'){
                 steps {
                     envFromJenkinsfile()
-                    echo 'envCallingFunction: '+'${NK}'
+                    echo "$NK"
                 }
             }
         }
