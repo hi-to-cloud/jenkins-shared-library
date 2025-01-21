@@ -12,6 +12,8 @@ def call(){
                     envFromJenkinsfile()
                     echo "$NK"
                     echo "$TKN"
+                    echo "$SETUP_CONTAINER"
+                    echo "$DASHBOARD_LINK"
                 }
             }
         }
