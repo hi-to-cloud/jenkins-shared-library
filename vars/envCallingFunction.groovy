@@ -2,7 +2,7 @@ def call(String SYSTEM_NAME){
     pipeline {
         agent any
         parameters {
-            string(name:"SYSTEM_NAME", defaultValue:'sitf-'+'$SYSTEM_NAME', description:'System to run on. Current option is sitf-'+'$SYSTEM_NAME.')
+            string(name:"SYSTEM_NAME", defaultValue:'$SYSTEM_NAME', description:'System to run on. Current option is $SYSTEM_NAME.')
         }
         stages {
             stage('Hello') {
@@ -17,7 +17,7 @@ def call(String SYSTEM_NAME){
                     echo "$TKN"
                     echo "$SETUP_CONTAINER"
                     echo "$DASHBOARD_LINK"
-                    echo "$params.SYSTEM_NAME"
+                    echo "$SYSTEM_NAME"
                 }
             }
             stage("ENV"){
