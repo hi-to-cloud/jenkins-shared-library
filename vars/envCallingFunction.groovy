@@ -2,7 +2,7 @@ def call(String SYSTEM_NAME){
     pipeline {
         agent any
         parameters {
-            string(name:"SYSTEM_NAME", defaultValue:SYSTEM_NAME, description:'System to run on. Current option is ${SYSTEM_NAME}.')
+            string(name:"SYSTEM_NAME", defaultValue:SYSTEM_NAME, description:"System to run on. Current option is ${SYSTEM_NAME}.")
             string(name:"SYSTEM_NAME2", defaultValue:'SYSTEM_NAME2', description:'System to run on. Current option is $SYSTEM_NAME.')
         }
         environment {
