@@ -17,7 +17,7 @@ def call(String SYSTEM_NAME){
                     echo "$TKN"
                     echo "$SETUP_CONTAINER"
                     echo "$DASHBOARD_LINK"
-                    echo "$SYSTEM_NAME"
+                    echo "$params.SYSTEM_NAME"
                 }
             }
             stage("ENV"){
