@@ -26,8 +26,6 @@ def call(String SYSTEM_NAME){
                     script{
                         sh 'env'
                         echo "--------------------"
-                        def SYSTEM1 = sh "echo '$SYSTEM_NAME' | awk -F '-' '{print $NF}'"
-                        echo "$SYSTEM1"
                         def SYSTEM = sh(script: "echo '${SYSTEM_NAME}' | awk -F '-' '{print \$NF}'", returnStdout: true).trim()
                         echo "$SYSTEM"
                     }
