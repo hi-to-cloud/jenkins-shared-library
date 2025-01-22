@@ -6,7 +6,7 @@ def call(String SYSTEM_NAME){
             string(name:"SYSTEM_NAME2", defaultValue:'SYSTEM_NAME2', description:'System to run on. Current option is $SYSTEM_NAME.')
         }
         environment {
-            SYSTEM_NAME =  env.SYSTEM_NAME
+            SYSTEM_NAME =  "${env.SYSTEM_NAME}"
         }
         stages {
             stage('Hello') {
