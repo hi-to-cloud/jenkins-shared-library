@@ -3,9 +3,10 @@ def call(String SYSTEM_NAME){
         agent any
         parameters {
             string(name:"SYSTEM_NAME", defaultValue:'$SYSTEM_NAME', description:'System to run on. Current option is $SYSTEM_NAME.')
+            string(name:"SYSTEM_NAME2", defaultValue:'SYSTEM_NAME2', description:'System to run on. Current option is $SYSTEM_NAME.')
         }
         environment {
-            SYSTEM_NAME = "sitf-newton8"
+            SYSTEM_NAME =  env.SYSTEM_NAME
         }
         stages {
             stage('Hello') {
