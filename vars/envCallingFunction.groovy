@@ -1,6 +1,9 @@
-def call(){
+def call(String SYSTEM_NAME){
     pipeline {
         agent any
+        parameters {
+            string(name:"SYSTEM_NAME", defaultValue:'$SYSTEM_NAME', description:'System to run on. Current option is $SYSTEM_NAME.')
+        }
         stages {
             stage('Hello') {
                 steps {
@@ -14,6 +17,7 @@ def call(){
                     echo "$TKN"
                     echo "$SETUP_CONTAINER"
                     echo "$DASHBOARD_LINK"
+                    echo "$SYSTEM_NAME"
                 }
             }
             stage("ENV"){
