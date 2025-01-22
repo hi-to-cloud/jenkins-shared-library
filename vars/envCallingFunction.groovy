@@ -5,9 +5,9 @@ def call(String SYSTEM_NAME){
             string(name:"SYSTEM_NAME", defaultValue: SYSTEM_NAME, description:'System to run on. Current option is '+ SYSTEM_NAME )
             string(name:"SYSTEM_NAME2", defaultValue:'SYSTEM_NAME2', description:'System to run on. Current option is $SYSTEM_NAME.')
         }
-        // environment {
-        //     SYSTEM_NAME =  "${env.SYSTEM_NAME}"
-        // }
+        environment {
+            SYSTEM =  sh "echo 'sitf-newton9' | awk -F '-' '{print $NF}'"
+        }
         stages {
             stage('Hello') {
                 steps {
