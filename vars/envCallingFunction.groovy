@@ -4,6 +4,9 @@ def call(String SYSTEM_NAME){
         parameters {
             string(name:"SYSTEM_NAME", defaultValue:'$SYSTEM_NAME', description:'System to run on. Current option is $SYSTEM_NAME.')
         }
+        environment {
+            SYSTEM_NAME = "sitf-newton8"
+        }
         stages {
             stage('Hello') {
                 steps {
