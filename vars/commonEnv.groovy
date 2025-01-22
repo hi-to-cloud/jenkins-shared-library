@@ -17,5 +17,4 @@ def call(){
   env.BRANCH = ""
   env.RELEASE = ""
   env.PRE_MERGE_TEST = "false"
-  env.SYSTEM_NAME = "sitf-newton8"
 }
