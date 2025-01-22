@@ -5,7 +5,6 @@ def call(String SYSTEM_NAME){
             string(name:"SYSTEM_NAME", defaultValue: SYSTEM_NAME, description:'System to run on. Current option is '+ SYSTEM_NAME )
             string(name:"SYSTEM_NAME2", defaultValue:'SYSTEM_NAME2', description:'System to run on. Current option is $SYSTEM_NAME.')
         }
-        def SYSTEM = sh(script: "echo '${SYSTEM_NAME}' | awk -F '-' '{print \$NF}'", returnStdout: true).trim()
         stages {
             stage('Hello') {
                 steps {
