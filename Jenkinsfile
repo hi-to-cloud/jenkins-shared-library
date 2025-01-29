@@ -1,4 +1,4 @@
-@Library('jenkins-shared') _
+@Library('jenkins-shared@tst-main') _
 
 commonEnv()
-envCallingFunction('naveen-sys1')
+envCallingFunction('naveen-sys2')
