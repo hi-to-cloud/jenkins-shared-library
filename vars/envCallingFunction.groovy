@@ -35,5 +35,9 @@ def call(String SYSTEM_NAME, String DO_PUBLISH = 'false'){
                 }
             }
         }
+        post('cleanup'){
+            always {
+                deleteDir()
+            }
     }
 }
