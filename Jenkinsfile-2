@@ -1,12 +1,13 @@
-
-  pipeline {
-      agent any
-      stages {
-          stage('Hello') {
-              steps {
+pipeline {
+    agent any
+    stages {
+        stage('Hello') {
+            steps {
+                script{
                   def helloScript = load("./vars/hello.groovy")
                   helloScript.call()
-              }
-          }
+                }
+            }
+        }
   }
 }
