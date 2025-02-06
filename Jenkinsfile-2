@@ -4,8 +4,9 @@ pipeline {
         stage('Hello') {
             steps {
                 script{
-                  def helloScript = load("vars/hello.groovy")
-                  helloScript.sayHello()
+                  // def helloScript = load("vars/hello.groovy")
+                  // helloScript.sayHello()
+                    sh 'vars/hello.sh'
                 }
             }
         }
