@@ -6,7 +6,7 @@ pipeline {
                 script{
                   // def helloScript = load("vars/hello.groovy")
                   // helloScript.sayHello()
-                    sh 'vars/hello.sh'
+                    sh './vars/hello.sh'
                 }
             }
         }
