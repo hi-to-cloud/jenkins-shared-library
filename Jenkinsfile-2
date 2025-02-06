@@ -1,0 +1,11 @@
+
+  pipeline {
+      agent any
+      stages {
+          stage('Hello') {
+              steps {
+                  def helloScript = load("./vars/hello.groovy")
+                  helloScript.call()
+              }
+          }
+  }
