@@ -28,16 +28,16 @@ pipeline {
         //     }
         // }
     }
-    post {
-        success {
-            script {
-                githubNotify context: 'Jenkins PR Check', status: 'SUCCESS', description: 'Build Passed'
-            }
-        }
-        failure {
-            script {
-                githubNotify context: 'Jenkins PR Check', status: 'FAILURE', description: 'Build Failed'
-            }
-        }
-    }
+    // post {
+    //     success {
+    //         script {
+    //             githubNotify context: 'Jenkins PR Check', status: 'SUCCESS', description: 'Build Passed'
+    //         }
+    //     }
+    //     failure {
+    //         script {
+    //             githubNotify context: 'Jenkins PR Check', status: 'FAILURE', description: 'Build Failed'
+    //         }
+    //     }
+    // }
 }
