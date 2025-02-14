@@ -5,39 +5,24 @@
 
 pipeline {
     agent any
-    // triggers {
-    //     githubPush()  // Automatically trigger on PR updates
-    // }
+    environment {
+        PR_URL = "${env.CHANGE_URL}"  // Extract PR URL (for GitHub PRs)
+    }
     stages {
-        stage('Checkout') {
+        stage('Greetings') {
             steps {
-                echo 'Checking out code...'
-                checkout scm
+                echo 'Hi From NK!'
             }
         }
-        // stage('Build') {
-        //     steps {
-        //         echo 'Building project...'
-        //         sh 'mvn clean package' // Modify as needed
-        //     }
-        // }
-        // stage('Test') {
-        //     steps {
-        //         echo 'Running tests...'
-        //         sh 'mvn test' // Modify as needed
-        //     }
-        // }
+        stage('Trigger New Pipeline'){
+            steps{
+                script{
+                    def params = [
+                        string(name: 'PR_URL', value: "${PR_URL}")
+                    ]
+                    build job: 'Multi-Demo-2.0', parameters: params, wait: true
+                }
+            }
+        }
     }
-    // post {
-    //     success {
-    //         script {
-    //             githubNotify context: 'Jenkins PR Check', status: 'SUCCESS', description: 'Build Passed'
-    //         }
-    //     }
-    //     failure {
-    //         script {
-    //             githubNotify context: 'Jenkins PR Check', status: 'FAILURE', description: 'Build Failed'
-    //         }
-    //     }
-    // }
 }
