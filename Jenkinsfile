@@ -38,7 +38,7 @@ pipeline {
         stage('Greetings') {
             steps {
                 script {
-                    echo 'Hi From NK!'
+                    echo 'Hi From NK!!'
                     echo "Pull Request URL: ${PR_URL}"
                 }
             }
