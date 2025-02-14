@@ -47,7 +47,7 @@ pipeline {
             steps {
                 script {
                     def params = [
-                        string(name: 'PR_URL', value: PR_URL)
+                        string(name: 'PR_URL', value: "${PR_URL}")
                     ]
                     build job: 'Multi-Demo-2.0', parameters: params, wait: true
                 }
