@@ -50,7 +50,7 @@ pipeline {
                     def params = [
                         string(name: 'PR_URL', value: "${PR_URL}")
                     ]
-                    build job: 'Multi-Demo-2.0', parameters: params, wait: true
+                    build job: 'Multi-Demo-2.0/main', parameters: params, wait: true
                 }
             }
         }
