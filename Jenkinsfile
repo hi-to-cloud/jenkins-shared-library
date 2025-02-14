@@ -12,7 +12,7 @@ pipeline {
         stage('Greetings') {
             steps {
                 echo 'Hi From NK!'
-                echo '${PR_URL}'
+                echo "${PR_URL}"
             }
         }
         stage('Trigger New Pipeline'){
