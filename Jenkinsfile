@@ -5,9 +5,9 @@
 
 pipeline {
     agent any
-    triggers {
-        githubPush()  // Automatically trigger on PR updates
-    }
+    // triggers {
+    //     githubPush()  // Automatically trigger on PR updates
+    // }
     stages {
         stage('Checkout') {
             steps {
