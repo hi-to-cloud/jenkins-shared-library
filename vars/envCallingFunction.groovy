@@ -12,8 +12,10 @@ def call(String SYSTEM_NAME, String DO_PUBLISH = 'false'){
         stages {
             stage('Run Shell Script') {
                 steps {
-                    sh 'chmod +x /vars/pr_check.sh
-                    ./vars/pr_check.sh'
+                    sh '''
+                    chmod +x /vars/pr_check.sh
+                    ./vars/pr_check.sh
+                    '''
                 }
             }
             stage('Hello') {
