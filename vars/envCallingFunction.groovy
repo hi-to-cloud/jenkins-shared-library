@@ -10,6 +10,11 @@ def call(String SYSTEM_NAME, String DO_PUBLISH = 'false'){
             SYSTEM = sh(script: "echo '${SYSTEM_NAME}' | awk -F '-' '{print \$NF}'", returnStdout: true).trim()
         }
         stages {
+            stage('PR Check') {
+                steps {
+                    sh './vars/pr_check.sh'
+                }
+            }
             stage('Hello') {
                 steps {
                     hello()
